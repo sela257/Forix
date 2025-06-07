@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Analysis - BaHi Security Forix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span class="logo-text">BaHi Security Forix</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="trading.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Trading</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="market.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Market</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="help.html" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content market-content">
+        <div class="market-header">
+            <h1 class="page-title">Market Analysis</h1>
+            <div class="market-controls">
+                <div class="market-selector">
+                    <button class="market-btn active">Forex</button>
+                    <button class="market-btn">Commodities</button>
+                    <button class="market-btn">Indices</button>
+                    <button class="market-btn">Crypto</button>
+                </div>
+                <div class="view-toggle">
+                    <button class="view-btn active" data-view="grid">
+                        <i class="fas fa-th-large"></i>
+                    </button>
+                    <button class="view-btn" data-view="list">
+                        <i class="fas fa-list"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <div class="market-overview">
+            <div class="overview-stats glass-effect">
+                <div class="stat-group">
+                    <div class="stat-item">
+                        <i class="fas fa-chart-line stat-icon profit"></i>
+                        <div class="stat-content">
+                            <span class="stat-label">Market Trend</span>
+                            <span class="stat-value profit">Bullish</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-fire stat-icon"></i>
+                        <div class="stat-content">
+                            <span class="stat-label">Volatility</span>
+                            <span class="stat-value">Moderate</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-clock stat-icon"></i>
+                        <div class="stat-content">
+                            <span class="stat-label">Market Session</span>
+                            <span class="stat-value">London</span>
+                        </div>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-globe stat-icon"></i>
+                        <div class="stat-content">
+                            <span class="stat-label">Next Session</span>
+                            <span class="stat-value">New York (2h)</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="market-grid" id="marketGrid">
+            <!-- Major Pairs -->
+            <div class="market-section glass-effect">
+                <div class="section-header">
+                    <h3><i class="fas fa-star"></i> Major Pairs</h3>
+                    <button class="expand-btn"><i class="fas fa-expand-alt"></i></button>
+                </div>
+                <div class="market-pairs">
+                    <div class="pair-card hover-lift">
+                        <div class="pair-header">
+                            <div class="pair-info">
+                                <span class="pair-name">EUR/USD</span>
+                                <span class="pair-desc">Euro vs US Dollar</span>
+                            </div>
+                            <div class="pair-flag">
+                                <span class="flag">🇪🇺</span>
+                                <span class="flag">🇺🇸</span>
+                            </div>
+                        </div>
+                        <div class="pair-prices">
+                            <div class="price-display">
+                                <span class="bid-price">1.0845</span>
+                                <span class="ask-price">1.0847</span>
+                            </div>
+                            <div class="price-change profit">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+0.12%</span>
+                            </div>
+                        </div>
+                        <div class="pair-chart">
+                            <div class="mini-chart">
+                                <div class="chart-line profit"></div>
+                            </div>
+                        </div>
+                        <div class="pair-actions">
+                            <button class="pair-btn buy">BUY</button>
+                            <button class="pair-btn sell">SELL</button>
+                        </div>
+                    </div>
+
+                    <div class="pair-card hover-lift">
+                        <div class="pair-header">
+                            <div class="pair-info">
+                                <span class="pair-name">GBP/USD</span>
+                                <span class="pair-desc">British Pound vs US Dollar</span>
+                            </div>
+                            <div class="pair-flag">
+                                <span class="flag">🇬🇧</span>
+                                <span class="flag">🇺🇸</span>
+                            </div>
+                        </div>
+                        <div class="pair-prices">
+                            <div class="price-display">
+                                <span class="bid-price">1.2567</span>
+                                <span class="ask-price">1.2569</span>
+                            </div>
+                            <div class="price-change loss">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-0.08%</span>
+                            </div>
+                        </div>
+                        <div class="pair-chart">
+                            <div class="mini-chart">
+                                <div class="chart-line loss"></div>
+                            </div>
+                        </div>
+                        <div class="pair-actions">
+                            <button class="pair-btn buy">BUY</button>
+                            <button class="pair-btn sell">SELL</button>
+                        </div>
+                    </div>
+
+                    <div class="pair-card hover-lift">
+                        <div class="pair-header">
+                            <div class="pair-info">
+                                <span class="pair-name">USD/JPY</span>
+                                <span class="pair-desc">US Dollar vs Japanese Yen</span>
+                            </div>
+                            <div class="pair-flag">
+                                <span class="flag">🇺🇸</span>
+                                <span class="flag">🇯🇵</span>
+                            </div>
+                        </div>
+                        <div class="pair-prices">
+                            <div class="price-display">
+                                <span class="bid-price">149.23</span>
+                                <span class="ask-price">149.25</span>
+                            </div>
+                            <div class="price-change profit">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+0.34%</span>
+                            </div>
+                        </div>
+                        <div class="pair-chart">
+                            <div class="mini-chart">
+                                <div class="chart-line profit"></div>
+                            </div>
+                        </div>
+                        <div class="pair-actions">
+                            <button class="pair-btn buy">BUY</button>
+                            <button class="pair-btn sell">SELL</button>
+                        </div>
+                    </div>
+
+                    <div class="pair-card hover-lift">
+                        <div class="pair-header">
+                            <div class="pair-info">
+                                <span class="pair-name">USD/CHF</span>
+                                <span class="pair-desc">US Dollar vs Swiss Franc</span>
+                            </div>
+                            <div class="pair-flag">
+                                <span class="flag">🇺🇸</span>
+                                <span class="flag">🇨🇭</span>
+                            </div>
+                        </div>
+                        <div class="pair-prices">
+                            <div class="price-display">
+                                <span class="bid-price">0.8756</span>
+                                <span class="ask-price">0.8758</span>
+                            </div>
+                            <div class="price-change profit">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+0.05%</span>
+                            </div>
+                        </div>
+                        <div class="pair-chart">
+                            <div class="mini-chart">
+                                <div class="chart-line profit"></div>
+                            </div>
+                        </div>
+                        <div class="pair-actions">
+                            <button class="pair-btn buy">BUY</button>
+                            <button class="pair-btn sell">SELL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Minor Pairs -->
+            <div class="market-section glass-effect">
+                <div class="section-header">
+                    <h3><i class="fas fa-chart-bar"></i> Minor Pairs</h3>
+                    <button class="expand-btn"><i class="fas fa-expand-alt"></i></button>
+                </div>
+                <div class="market-pairs">
+                    <div class="pair-card hover-lift">
+                        <div class="pair-header">
+                            <div class="pair-info">
+                                <span class="pair-name">AUD/USD</span>
+                                <span class="pair-desc">Australian Dollar vs US Dollar</span>
+                            </div>
+                            <div class="pair-flag">
+                                <span class="flag">🇦🇺</span>
+                                <span class="flag">🇺🇸</span>
+                            </div>
+                        </div>
+                        <div class="pair-prices">
+                            <div class="price-display">
+                                <span class="bid-price">0.6523</span>
+                                <span class="ask-price">0.6525</span>
+                            </div>
+                            <div class="price-change loss">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-0.15%</span>
+                            </div>
+                        </div>
+                        <div class="pair-chart">
+                            <div class="mini-chart">
+                                <div class="chart-line loss"></div>
+                            </div>
+                        </div>
+                        <div class="pair-actions">
+                            <button class="pair-btn buy">BUY</button>
+                            <button class="pair-btn sell">SELL</button>
+                        </div>
+                    </div>
+
+                    <div class="pair-card hover-lift">
+                        <div class="pair-header">
+                            <div class="pair-info">
+                                <span class="pair-name">NZD/USD</span>
+                                <span class="pair-desc">New Zealand Dollar vs US Dollar</span>
+                            </div>
+                            <div class="pair-flag">
+                                <span class="flag">🇳🇿</span>
+                                <span class="flag">🇺🇸</span>
+                            </div>
+                        </div>
+                        <div class="pair-prices">
+                            <div class="price-display">
+                                <span class="bid-price">0.6123</span>
+                                <span class="ask-price">0.6125</span>
+                            </div>
+                            <div class="price-change loss">
+                                <i class="fas fa-arrow-down"></i>
+                                <span>-0.22%</span>
+                            </div>
+                        </div>
+                        <div class="pair-chart">
+                            <div class="mini-chart">
+                                <div class="chart-line loss"></div>
+                            </div>
+                        </div>
+                        <div class="pair-actions">
+                            <button class="pair-btn buy">BUY</button>
+                            <button class="pair-btn sell">SELL</button>
+                        </div>
+                    </div>
+
+                    <div class="pair-card hover-lift">
+                        <div class="pair-header">
+                            <div class="pair-info">
+                                <span class="pair-name">USD/CAD</span>
+                                <span class="pair-desc">US Dollar vs Canadian Dollar</span>
+                            </div>
+                            <div class="pair-flag">
+                                <span class="flag">🇺🇸</span>
+                                <span class="flag">🇨🇦</span>
+                            </div>
+                        </div>
+                        <div class="pair-prices">
+                            <div class="price-display">
+                                <span class="bid-price">1.3567</span>
+                                <span class="ask-price">1.3569</span>
+                            </div>
+                            <div class="price-change profit">
+                                <i class="fas fa-arrow-up"></i>
+                                <span>+0.18%</span>
+                            </div>
+                        </div>
+                        <div class="pair-chart">
+                            <div class="mini-chart">
+                                <div class="chart-line profit"></div>
+                            </div>
+                        </div>
+                        <div class="pair-actions">
+                            <button class="pair-btn buy">BUY</button>
+                            <button class="pair-btn sell">SELL</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Analysis -->
+            <div class="analysis-section glass-effect">
+                <div class="section-header">
+                    <h3><i class="fas fa-brain"></i> AI Market Analysis</h3>
+                    <div class="analysis-time">
+                        <i class="fas fa-clock"></i>
+                        <span>Updated 5 minutes ago</span>
+                    </div>
+                </div>
+                <div class="analysis-content">
+                    <div class="analysis-item">
+                        <div class="analysis-header">
+                            <span class="analysis-symbol">EUR/USD</span>
+                            <span class="analysis-signal buy">BUY SIGNAL</span>
+                        </div>
+                        <div class="analysis-details">
+                            <p>Technical indicators suggest a bullish trend continuation. RSI shows room for upward movement.</p>
+                            <div class="analysis-indicators">
+                                <span class="indicator profit">RSI: 58</span>
+                                <span class="indicator profit">MACD: Bullish</span>
+                                <span class="indicator">Support: 1.0820</span>
+                                <span class="indicator">Resistance: 1.0890</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="analysis-item">
+                        <div class="analysis-header">
+                            <span class="analysis-symbol">GBP/USD</span>
+                            <span class="analysis-signal neutral">NEUTRAL</span>
+                        </div>
+                        <div class="analysis-details">
+                            <p>Mixed signals from technical indicators. Price consolidating near key support level.</p>
+                            <div class="analysis-indicators">
+                                <span class="indicator">RSI: 45</span>
+                                <span class="indicator loss">MACD: Bearish</span>
+                                <span class="indicator">Support: 1.2550</span>
+                                <span class="indicator">Resistance: 1.2600</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Economic Calendar -->
+            <div class="calendar-section glass-effect">
+                <div class="section-header">
+                    <h3><i class="fas fa-calendar-alt"></i> Economic Calendar</h3>
+                    <button class="calendar-btn">View Full Calendar</button>
+                </div>
+                <div class="calendar-events">
+                    <div class="event-item high-impact">
+                        <div class="event-time">14:30</div>
+                        <div class="event-details">
+                            <span class="event-currency">USD</span>
+                            <span class="event-name">Non-Farm Payrolls</span>
+                            <span class="event-impact high">HIGH</span>
+                        </div>
+                        <div class="event-values">
+                            <span class="event-forecast">185K</span>
+                            <span class="event-previous">150K</span>
+                        </div>
+                    </div>
+
+                    <div class="event-item medium-impact">
+                        <div class="event-time">16:00</div>
+                        <div class="event-details">
+                            <span class="event-currency">EUR</span>
+                            <span class="event-name">ECB Interest Rate</span>
+                            <span class="event-impact medium">MED</span>
+                        </div>
+                        <div class="event-values">
+                            <span class="event-forecast">4.50%</span>
+                            <span class="event-previous">4.50%</span>
+                        </div>
+                    </div>
+
+                    <div class="event-item low-impact">
+                        <div class="event-time">18:30</div>
+                        <div class="event-details">
+                            <span class="event-currency">GBP</span>
+                            <span class="event-name">Manufacturing PMI</span>
+                            <span class="event-impact low">LOW</span>
+                        </div>
+                        <div class="event-values">
+                            <span class="event-forecast">45.2</span>
+                            <span class="event-previous">44.8</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Market selector functionality
+        const marketBtns = document.querySelectorAll('.market-btn');
+        marketBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                marketBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // View toggle functionality
+        const viewBtns = document.querySelectorAll('.view-btn');
+        const marketGrid = document.getElementById('marketGrid');
+        
+        viewBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                viewBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const viewType = this.dataset.view;
+                marketGrid.className = viewType === 'list' ? 'market-list' : 'market-grid';
+            });
+        });
+
+        // Pair trading buttons
+        const pairBtns = document.querySelectorAll('.pair-btn');
+        pairBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const action = this.textContent;
+                const pairName = this.closest('.pair-card').querySelector('.pair-name').textContent;
+                
+                // Add click animation
+                this.style.transform = 'scale(0.95)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                    alert(`${action} order for ${pairName} initiated!`);
+                }, 150);
+            });
+        });
+
+        // Simulate real-time price updates
+        function updateMarketPrices() {
+            const priceElements = document.querySelectorAll('.bid-price, .ask-price');
+            priceElements.forEach(element => {
+                const currentPrice = parseFloat(element.textContent);
+                const change = (Math.random() - 0.5) * 0.01;
+                const decimals = element.textContent.includes('.') ? element.textContent.split('.')[1].length : 0;
+                const newPrice = (currentPrice + change).toFixed(decimals);
+                element.textContent = newPrice;
+                
+                // Add flash animation
+                element.style.animation = 'flash 0.3s ease-out';
+                setTimeout(() => {
+                    element.style.animation = '';
+                }, 300);
+            });
+
+            // Update percentage changes
+            const changeElements = document.querySelectorAll('.price-change span');
+            changeElements.forEach(element => {
+                const currentChange = parseFloat(element.textContent.replace('%', '').replace('+', ''));
+                const newChange = currentChange + (Math.random() - 0.5) * 0.1;
+                const changeClass = newChange >= 0 ? 'profit' : 'loss';
+                const changeSymbol = newChange >= 0 ? '+' : '';
+                
+                element.textContent = `${changeSymbol}${newChange.toFixed(2)}%`;
+                element.parentElement.className = `price-change ${changeClass}`;
+                
+                // Update arrow icon
+                const arrow = element.parentElement.querySelector('i');
+                arrow.className = newChange >= 0 ? 'fas fa-arrow-up' : 'fas fa-arrow-down';
+            });
+        }
+
+        // Update prices every 3 seconds
+        setInterval(updateMarketPrices, 3000);
+
+        // Animate mini charts
+        function animateMiniCharts() {
+            const chartLines = document.querySelectorAll('.chart-line');
+            chartLines.forEach((line, index) => {
+                setTimeout(() => {
+                    line.style.animation = 'chart-draw 2s ease-out forwards';
+                }, index * 100);
+            });
+        }
+
+        // Initialize chart animations
+        setTimeout(animateMiniCharts, 1000);
+    </script>
+</body>
+</html>

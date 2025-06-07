@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaHi Security Forix - Advanced Virtual Trading Platform</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Authentication Check -->
+    <script>
+        // Check if user is logged in for first-time visitors
+        const hasLoggedIn = localStorage.getItem('userAuthenticated');
+        if (!hasLoggedIn) {
+            window.location.href = 'login.html';
+        }
+    </script>
+
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loader">
+            <div class="loader-ring"></div>
+            <div class="loader-text">BaHi Security Forix</div>
+        </div>
+    </div>
+
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span class="logo-text">BaHi Security Forix</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item active">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="trading.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Trading</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="market.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Market</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="help.html" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content">
+        <section class="hero-section">
+            <div class="hero-background">
+                <div class="floating-particles"></div>
+                <div class="cosmic-background"></div>
+                <div class="energy-waves"></div>
+            </div>
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <span class="title-main" data-text="BaHi Security Forix">BaHi Security Forix</span>
+                    <span class="title-sub quantum-text">Advanced Virtual Trading Platform</span>
+                </h1>
+                <p class="hero-description">
+                    Experience the future of virtual forex trading with cutting-edge technology,
+                    real-time market simulation, and professional-grade tools designed for traders of all levels.
+                </p>
+                <div class="hero-buttons">
+                    <a href="dashboard.html" class="btn btn-primary pulse-animation mega-button">
+                        <i class="fas fa-rocket"></i>
+                        Start Trading
+                        <div class="button-energy"></div>
+                    </a>
+                    <a href="market.html" class="btn btn-secondary holographic-btn">
+                        <i class="fas fa-chart-line"></i>
+                        View Markets
+                        <div class="button-ripple"></div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="container">
+                <h2 class="section-title">Platform Features</h2>
+                <div class="features-grid">
+                    <div class="feature-card glass-effect hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Real-Time Charts</h3>
+                        <p>Advanced charting tools with multiple timeframes and technical indicators</p>
+                        <a href="trading.html" class="feature-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="feature-card glass-effect hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Secure Trading</h3>
+                        <p>Bank-level security with encrypted transactions and data protection</p>
+                        <a href="settings.html" class="feature-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="feature-card glass-effect hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-mobile-alt"></i>
+                        </div>
+                        <h3>Mobile Ready</h3>
+                        <p>Trade anywhere with our responsive design and mobile-optimized interface</p>
+                        <a href="dashboard.html" class="feature-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                    <div class="feature-card glass-effect hover-lift">
+                        <div class="feature-icon">
+                            <i class="fas fa-brain"></i>
+                        </div>
+                        <h3>AI Analytics</h3>
+                        <p>Artificial intelligence powered market analysis and trading insights</p>
+                        <a href="market.html" class="feature-link">
+                            <i class="fas fa-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="stats-section">
+            <div class="container">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="50000">0</div>
+                        <div class="stat-label">Active Traders</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="1000000">0</div>
+                        <div class="stat-label">Trades Executed</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="99.9">0</div>
+                        <div class="stat-label">Uptime %</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" data-target="24">0</div>
+                        <div class="stat-label">24/7 Support</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer glass-effect">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-chart-line"></i>
+                        <span>BaHi Security Forix</span>
+                    </div>
+                    <p>Advanced Virtual Trading Platform for Professional Traders</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Platform</h4>
+                        <a href="trading.html">Trading</a>
+                        <a href="portfolio.html">Portfolio</a>
+                        <a href="market.html">Market Data</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <a href="help.html">Help Center</a>
+                        <a href="news.html">News</a>
+                        <a href="settings.html">Settings</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 BaHi Security Forix. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Loading screen animation
+        window.addEventListener('load', function() {
+            setTimeout(() => {
+                document.getElementById('loadingScreen').style.opacity = '0';
+                setTimeout(() => {
+                    document.getElementById('loadingScreen').style.display = 'none';
+                }, 500);
+            }, 2000);
+        });
+
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Animated counter for stats
+        function animateCounter(element) {
+            const target = parseInt(element.getAttribute('data-target'));
+            const increment = target / 100;
+            let current = 0;
+            
+            const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                    element.textContent = target.toLocaleString();
+                    clearInterval(timer);
+                } else {
+                    element.textContent = Math.floor(current).toLocaleString();
+                }
+            }, 20);
+        }
+
+        // Intersection Observer for stats animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const statNumbers = entry.target.querySelectorAll('.stat-number');
+                    statNumbers.forEach(animateCounter);
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+    </script>
+</body>
+</html>

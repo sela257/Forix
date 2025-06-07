@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trading - BaHi Security Forix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span class="logo-text">BaHi Security Forix</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="trading.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Trading</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="market.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Market</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="help.html" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content trading-content">
+        <div class="trading-layout">
+            <!-- Chart Section -->
+            <div class="chart-section glass-effect">
+                <div class="chart-header">
+                    <div class="chart-controls">
+                        <select class="pair-selector">
+                            <option value="EURUSD">EUR/USD</option>
+                            <option value="GBPUSD">GBP/USD</option>
+                            <option value="USDJPY">USD/JPY</option>
+                            <option value="AUDUSD">AUD/USD</option>
+                        </select>
+                        <div class="timeframe-buttons">
+                            <button class="tf-btn">1M</button>
+                            <button class="tf-btn">5M</button>
+                            <button class="tf-btn active">15M</button>
+                            <button class="tf-btn">1H</button>
+                            <button class="tf-btn">4H</button>
+                            <button class="tf-btn">1D</button>
+                        </div>
+                    </div>
+                    <div class="chart-tools">
+                        <button class="tool-btn"><i class="fas fa-crosshairs"></i></button>
+                        <button class="tool-btn"><i class="fas fa-pencil-alt"></i></button>
+                        <button class="tool-btn"><i class="fas fa-ruler"></i></button>
+                        <button class="tool-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="chart-container">
+                    <div class="trading-chart">
+                        <div class="price-levels">
+                            <div class="price-level" style="top: 20%;">1.0890</div>
+                            <div class="price-level" style="top: 40%;">1.0870</div>
+                            <div class="price-level current" style="top: 60%;">1.0847</div>
+                            <div class="price-level" style="top: 80%;">1.0820</div>
+                        </div>
+                        <div class="candlesticks">
+                            <div class="candlestick bullish" style="left: 10%; height: 30px; top: 50%;"></div>
+                            <div class="candlestick bearish" style="left: 15%; height: 25px; top: 45%;"></div>
+                            <div class="candlestick bullish" style="left: 20%; height: 35px; top: 55%;"></div>
+                            <div class="candlestick bullish" style="left: 25%; height: 20px; top: 58%;"></div>
+                            <div class="candlestick bearish" style="left: 30%; height: 28px; top: 52%;"></div>
+                            <div class="candlestick bullish" style="left: 35%; height: 32px; top: 60%;"></div>
+                            <div class="candlestick bullish" style="left: 40%; height: 18px; top: 62%;"></div>
+                            <div class="candlestick bearish" style="left: 45%; height: 22px; top: 58%;"></div>
+                            <div class="candlestick bullish" style="left: 50%; height: 26px; top: 63%;"></div>
+                            <div class="candlestick bullish" style="left: 55%; height: 24px; top: 65%;"></div>
+                        </div>
+                        <div class="chart-grid"></div>
+                    </div>
+                </div>
+                <div class="chart-indicators">
+                    <div class="indicator-group">
+                        <label>Technical Indicators:</label>
+                        <button class="indicator-btn active">MA</button>
+                        <button class="indicator-btn">RSI</button>
+                        <button class="indicator-btn">MACD</button>
+                        <button class="indicator-btn">Bollinger</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trading Panel -->
+            <div class="trading-panel glass-effect">
+                <div class="panel-header">
+                    <h3><i class="fas fa-exchange-alt"></i> Trading Panel</h3>
+                </div>
+                <div class="panel-content">
+                    <div class="trade-type-selector">
+                        <button class="trade-type-btn active" data-type="market">Market</button>
+                        <button class="trade-type-btn" data-type="limit">Limit</button>
+                        <button class="trade-type-btn" data-type="stop">Stop</button>
+                    </div>
+
+                    <div class="symbol-info">
+                        <div class="symbol-header">
+                            <span class="symbol-name">EUR/USD</span>
+                            <span class="symbol-spread">Spread: 1.2</span>
+                        </div>
+                        <div class="symbol-prices">
+                            <div class="price-box sell">
+                                <span class="price-label">SELL</span>
+                                <span class="price-value">1.0845</span>
+                            </div>
+                            <div class="price-box buy">
+                                <span class="price-label">BUY</span>
+                                <span class="price-value">1.0847</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="trade-form">
+                        <div class="form-group">
+                            <label>Volume</label>
+                            <div class="volume-controls">
+                                <button class="volume-btn" data-volume="0.01">0.01</button>
+                                <button class="volume-btn" data-volume="0.1">0.1</button>
+                                <button class="volume-btn active" data-volume="1.0">1.0</button>
+                                <input type="number" class="volume-input" value="1.0" step="0.01" min="0.01">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label>Stop Loss</label>
+                            <input type="number" class="form-input" placeholder="Optional" step="0.0001">
+                        </div>
+
+                        <div class="form-group">
+                            <label>Take Profit</label>
+                            <input type="number" class="form-input" placeholder="Optional" step="0.0001">
+                        </div>
+
+                        <div class="trade-actions">
+                            <button class="trade-btn sell-btn">
+                                <i class="fas fa-arrow-down"></i>
+                                SELL
+                            </button>
+                            <button class="trade-btn buy-btn">
+                                <i class="fas fa-arrow-up"></i>
+                                BUY
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Watch -->
+            <div class="market-watch glass-effect">
+                <div class="panel-header">
+                    <h3><i class="fas fa-eye"></i> Market Watch</h3>
+                    <button class="add-symbol-btn"><i class="fas fa-plus"></i></button>
+                </div>
+                <div class="panel-content">
+                    <div class="watchlist">
+                        <div class="watchlist-item active">
+                            <div class="symbol-info">
+                                <span class="symbol">EUR/USD</span>
+                                <span class="description">Euro vs US Dollar</span>
+                            </div>
+                            <div class="symbol-prices">
+                                <span class="bid">1.0845</span>
+                                <span class="ask">1.0847</span>
+                                <span class="change profit">+0.12%</span>
+                            </div>
+                        </div>
+                        <div class="watchlist-item">
+                            <div class="symbol-info">
+                                <span class="symbol">GBP/USD</span>
+                                <span class="description">British Pound vs US Dollar</span>
+                            </div>
+                            <div class="symbol-prices">
+                                <span class="bid">1.2567</span>
+                                <span class="ask">1.2569</span>
+                                <span class="change loss">-0.08%</span>
+                            </div>
+                        </div>
+                        <div class="watchlist-item">
+                            <div class="symbol-info">
+                                <span class="symbol">USD/JPY</span>
+                                <span class="description">US Dollar vs Japanese Yen</span>
+                            </div>
+                            <div class="symbol-prices">
+                                <span class="bid">149.23</span>
+                                <span class="ask">149.25</span>
+                                <span class="change profit">+0.34%</span>
+                            </div>
+                        </div>
+                        <div class="watchlist-item">
+                            <div class="symbol-info">
+                                <span class="symbol">AUD/USD</span>
+                                <span class="description">Australian Dollar vs US Dollar</span>
+                            </div>
+                            <div class="symbol-prices">
+                                <span class="bid">0.6523</span>
+                                <span class="ask">0.6525</span>
+                                <span class="change loss">-0.15%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Open Positions -->
+            <div class="positions-panel glass-effect">
+                <div class="panel-header">
+                    <h3><i class="fas fa-chart-pie"></i> Open Positions</h3>
+                </div>
+                <div class="panel-content">
+                    <div class="positions-list">
+                        <div class="position-item">
+                            <div class="position-info">
+                                <span class="position-symbol">EUR/USD</span>
+                                <span class="position-type buy">BUY 0.10</span>
+                            </div>
+                            <div class="position-data">
+                                <div class="data-item">
+                                    <span class="data-label">Open</span>
+                                    <span class="data-value">1.0832</span>
+                                </div>
+                                <div class="data-item">
+                                    <span class="data-label">Current</span>
+                                    <span class="data-value">1.0847</span>
+                                </div>
+                                <div class="data-item">
+                                    <span class="data-label">P&L</span>
+                                    <span class="data-value profit">+$15.00</span>
+                                </div>
+                            </div>
+                            <button class="close-position-btn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                        <div class="position-item">
+                            <div class="position-info">
+                                <span class="position-symbol">GBP/USD</span>
+                                <span class="position-type sell">SELL 0.05</span>
+                            </div>
+                            <div class="position-data">
+                                <div class="data-item">
+                                    <span class="data-label">Open</span>
+                                    <span class="data-value">1.2578</span>
+                                </div>
+                                <div class="data-item">
+                                    <span class="data-label">Current</span>
+                                    <span class="data-value">1.2569</span>
+                                </div>
+                                <div class="data-item">
+                                    <span class="data-label">P&L</span>
+                                    <span class="data-value profit">+$4.50</span>
+                                </div>
+                            </div>
+                            <button class="close-position-btn">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Timeframe buttons
+        const tfBtns = document.querySelectorAll('.tf-btn');
+        tfBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tfBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Trade type selector
+        const tradeTypeBtns = document.querySelectorAll('.trade-type-btn');
+        tradeTypeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                tradeTypeBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Volume controls
+        const volumeBtns = document.querySelectorAll('.volume-btn');
+        const volumeInput = document.querySelector('.volume-input');
+        
+        volumeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                volumeBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                volumeInput.value = this.dataset.volume;
+            });
+        });
+
+        // Trading buttons
+        const sellBtn = document.querySelector('.sell-btn');
+        const buyBtn = document.querySelector('.buy-btn');
+
+        sellBtn.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+                // Show trade confirmation
+                alert('SELL order placed successfully!');
+            }, 150);
+        });
+
+        buyBtn.addEventListener('click', function() {
+            this.style.transform = 'scale(0.95)';
+            setTimeout(() => {
+                this.style.transform = '';
+                // Show trade confirmation
+                alert('BUY order placed successfully!');
+            }, 150);
+        });
+
+        // Watchlist item selection
+        const watchlistItems = document.querySelectorAll('.watchlist-item');
+        watchlistItems.forEach(item => {
+            item.addEventListener('click', function() {
+                watchlistItems.forEach(i => i.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Update trading panel with selected symbol
+                const symbol = this.querySelector('.symbol').textContent;
+                document.querySelector('.symbol-name').textContent = symbol;
+            });
+        });
+
+        // Animate candlesticks
+        function animateCandlesticks() {
+            const candlesticks = document.querySelectorAll('.candlestick');
+            candlesticks.forEach((candle, index) => {
+                setTimeout(() => {
+                    candle.style.opacity = '1';
+                    candle.style.transform = 'scaleY(1)';
+                }, index * 100);
+            });
+        }
+
+        // Initialize candlestick animation
+        setTimeout(animateCandlesticks, 500);
+
+        // Simulate real-time price updates
+        function updateTradingPrices() {
+            const priceElements = document.querySelectorAll('.price-value, .ask, .bid');
+            priceElements.forEach(element => {
+                const currentPrice = parseFloat(element.textContent);
+                const change = (Math.random() - 0.5) * 0.01;
+                const newPrice = (currentPrice + change).toFixed(4);
+                element.textContent = newPrice;
+                
+                // Add flash animation
+                element.style.animation = 'flash 0.3s ease-out';
+                setTimeout(() => {
+                    element.style.animation = '';
+                }, 300);
+            });
+        }
+
+        // Update prices every 2 seconds
+        setInterval(updateTradingPrices, 2000);
+    </script>
+</body>
+</html>

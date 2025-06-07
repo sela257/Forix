@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - BaHi Security Forix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span class="logo-text">BaHi Security Forix</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="trading.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Trading</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="portfolio.html" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="market.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Market</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="help.html" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content portfolio-content">
+        <div class="portfolio-header">
+            <h1 class="page-title">Portfolio Management</h1>
+            <div class="portfolio-controls">
+                <div class="date-range">
+                    <input type="date" class="date-input" id="startDate">
+                    <span>to</span>
+                    <input type="date" class="date-input" id="endDate">
+                </div>
+                <button class="export-btn">
+                    <i class="fas fa-download"></i>
+                    Export
+                </button>
+            </div>
+        </div>
+
+        <div class="portfolio-overview">
+            <div class="overview-card glass-effect">
+                <div class="overview-header">
+                    <h3>Portfolio Summary</h3>
+                    <div class="time-selector">
+                        <button class="time-btn active">1D</button>
+                        <button class="time-btn">1W</button>
+                        <button class="time-btn">1M</button>
+                        <button class="time-btn">1Y</button>
+                    </div>
+                </div>
+                <div class="overview-content">
+                    <div class="balance-summary">
+                        <div class="balance-item">
+                            <span class="balance-label">Total Equity</span>
+                            <span class="balance-value">$102,450.75</span>
+                            <span class="balance-change profit">+2.45%</span>
+                        </div>
+                        <div class="balance-item">
+                            <span class="balance-label">Free Margin</span>
+                            <span class="balance-value">$87,220.50</span>
+                        </div>
+                        <div class="balance-item">
+                            <span class="balance-label">Used Margin</span>
+                            <span class="balance-value">$15,230.25</span>
+                        </div>
+                        <div class="balance-item">
+                            <span class="balance-label">Margin Level</span>
+                            <span class="balance-value">672.84%</span>
+                        </div>
+                    </div>
+                    <div class="performance-chart">
+                        <canvas class="equity-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="portfolio-tabs">
+            <div class="tab-navigation">
+                <button class="tab-btn active" data-tab="positions">Active Positions</button>
+                <button class="tab-btn" data-tab="history">Trade History</button>
+                <button class="tab-btn" data-tab="analytics">Analytics</button>
+                <button class="tab-btn" data-tab="orders">Pending Orders</button>
+            </div>
+
+            <div class="tab-content">
+                <!-- Active Positions Tab -->
+                <div class="tab-panel active" id="positions">
+                    <div class="positions-table glass-effect">
+                        <div class="table-header">
+                            <h3><i class="fas fa-chart-pie"></i> Active Positions</h3>
+                            <div class="table-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-sync-alt"></i>
+                                    Refresh
+                                </button>
+                                <button class="action-btn">
+                                    <i class="fas fa-times-circle"></i>
+                                    Close All
+                                </button>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Symbol</th>
+                                        <th>Type</th>
+                                        <th>Volume</th>
+                                        <th>Open Price</th>
+                                        <th>Current Price</th>
+                                        <th>S/L</th>
+                                        <th>T/P</th>
+                                        <th>Profit/Loss</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-row">
+                                        <td class="symbol-cell">
+                                            <span class="symbol-name">EUR/USD</span>
+                                        </td>
+                                        <td><span class="trade-type buy">BUY</span></td>
+                                        <td>0.10</td>
+                                        <td>1.0832</td>
+                                        <td class="current-price">1.0847</td>
+                                        <td>1.0800</td>
+                                        <td>1.0900</td>
+                                        <td class="profit-cell profit">+$15.00</td>
+                                        <td>
+                                            <button class="table-action-btn modify">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="table-action-btn close">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td class="symbol-cell">
+                                            <span class="symbol-name">GBP/USD</span>
+                                        </td>
+                                        <td><span class="trade-type sell">SELL</span></td>
+                                        <td>0.05</td>
+                                        <td>1.2578</td>
+                                        <td class="current-price">1.2569</td>
+                                        <td>1.2600</td>
+                                        <td>1.2520</td>
+                                        <td class="profit-cell profit">+$4.50</td>
+                                        <td>
+                                            <button class="table-action-btn modify">
+                                                <i class="fas fa-edit"></i>
+                                            </button>
+                                            <button class="table-action-btn close">
+                                                <i class="fas fa-times"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trade History Tab -->
+                <div class="tab-panel" id="history">
+                    <div class="history-table glass-effect">
+                        <div class="table-header">
+                            <h3><i class="fas fa-history"></i> Trade History</h3>
+                            <div class="table-filters">
+                                <select class="filter-select">
+                                    <option>All Trades</option>
+                                    <option>Profitable</option>
+                                    <option>Loss</option>
+                                </select>
+                                <select class="filter-select">
+                                    <option>Last 30 Days</option>
+                                    <option>Last 7 Days</option>
+                                    <option>Today</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="table-container">
+                            <table class="data-table">
+                                <thead>
+                                    <tr>
+                                        <th>Date</th>
+                                        <th>Symbol</th>
+                                        <th>Type</th>
+                                        <th>Volume</th>
+                                        <th>Open Price</th>
+                                        <th>Close Price</th>
+                                        <th>Duration</th>
+                                        <th>Profit/Loss</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="table-row">
+                                        <td>2024-01-15 14:30</td>
+                                        <td>USD/JPY</td>
+                                        <td><span class="trade-type buy">BUY</span></td>
+                                        <td>0.20</td>
+                                        <td>149.15</td>
+                                        <td>149.45</td>
+                                        <td>2h 15m</td>
+                                        <td class="profit-cell profit">+$60.00</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td>2024-01-15 10:15</td>
+                                        <td>EUR/USD</td>
+                                        <td><span class="trade-type sell">SELL</span></td>
+                                        <td>0.15</td>
+                                        <td>1.0865</td>
+                                        <td>1.0845</td>
+                                        <td>1h 45m</td>
+                                        <td class="profit-cell profit">+$30.00</td>
+                                    </tr>
+                                    <tr class="table-row">
+                                        <td>2024-01-14 16:20</td>
+                                        <td>GBP/USD</td>
+                                        <td><span class="trade-type buy">BUY</span></td>
+                                        <td>0.10</td>
+                                        <td>1.2580</td>
+                                        <td>1.2565</td>
+                                        <td>3h 10m</td>
+                                        <td class="profit-cell loss">-$15.00</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Analytics Tab -->
+                <div class="tab-panel" id="analytics">
+                    <div class="analytics-grid">
+                        <div class="analytics-card glass-effect">
+                            <div class="card-header">
+                                <h3><i class="fas fa-chart-bar"></i> Performance Metrics</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="metrics-grid">
+                                    <div class="metric-item">
+                                        <span class="metric-label">Total Trades</span>
+                                        <span class="metric-value">127</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Win Rate</span>
+                                        <span class="metric-value profit">73.2%</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Profit Factor</span>
+                                        <span class="metric-value">2.34</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Avg. Trade</span>
+                                        <span class="metric-value profit">$19.30</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Best Trade</span>
+                                        <span class="metric-value profit">$245.00</span>
+                                    </div>
+                                    <div class="metric-item">
+                                        <span class="metric-label">Worst Trade</span>
+                                        <span class="metric-value loss">-$87.50</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="analytics-card glass-effect">
+                            <div class="card-header">
+                                <h3><i class="fas fa-pie-chart"></i> Trading Distribution</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="distribution-chart">
+                                    <div class="distribution-item">
+                                        <div class="distribution-bar">
+                                            <div class="bar-fill" style="width: 45%;"></div>
+                                        </div>
+                                        <span class="distribution-label">EUR/USD (45%)</span>
+                                    </div>
+                                    <div class="distribution-item">
+                                        <div class="distribution-bar">
+                                            <div class="bar-fill" style="width: 30%;"></div>
+                                        </div>
+                                        <span class="distribution-label">GBP/USD (30%)</span>
+                                    </div>
+                                    <div class="distribution-item">
+                                        <div class="distribution-bar">
+                                            <div class="bar-fill" style="width: 15%;"></div>
+                                        </div>
+                                        <span class="distribution-label">USD/JPY (15%)</span>
+                                    </div>
+                                    <div class="distribution-item">
+                                        <div class="distribution-bar">
+                                            <div class="bar-fill" style="width: 10%;"></div>
+                                        </div>
+                                        <span class="distribution-label">AUD/USD (10%)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pending Orders Tab -->
+                <div class="tab-panel" id="orders">
+                    <div class="orders-table glass-effect">
+                        <div class="table-header">
+                            <h3><i class="fas fa-clock"></i> Pending Orders</h3>
+                            <div class="table-actions">
+                                <button class="action-btn">
+                                    <i class="fas fa-plus"></i>
+                                    New Order
+                                </button>
+                            </div>
+                        </div>
+                        <div class="empty-state">
+                            <i class="fas fa-clock"></i>
+                            <h4>No Pending Orders</h4>
+                            <p>You currently have no pending orders. Create limit or stop orders to trade automatically when price conditions are met.</p>
+                            <a href="trading.html" class="btn btn-primary">
+                                <i class="fas fa-plus"></i>
+                                Create Order
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Tab functionality
+        const tabBtns = document.querySelectorAll('.tab-btn');
+        const tabPanels = document.querySelectorAll('.tab-panel');
+
+        tabBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetTab = this.dataset.tab;
+                
+                // Remove active class from all tabs and panels
+                tabBtns.forEach(b => b.classList.remove('active'));
+                tabPanels.forEach(p => p.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding panel
+                this.classList.add('active');
+                document.getElementById(targetTab).classList.add('active');
+            });
+        });
+
+        // Time selector functionality
+        const timeBtns = document.querySelectorAll('.time-btn');
+        timeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                timeBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Set default dates
+        const today = new Date();
+        const thirtyDaysAgo = new Date(today.getTime() - (30 * 24 * 60 * 60 * 1000));
+        
+        document.getElementById('startDate').value = thirtyDaysAgo.toISOString().split('T')[0];
+        document.getElementById('endDate').value = today.toISOString().split('T')[0];
+
+        // Animate distribution bars
+        function animateDistributionBars() {
+            const bars = document.querySelectorAll('.bar-fill');
+            bars.forEach((bar, index) => {
+                setTimeout(() => {
+                    const width = bar.style.width;
+                    bar.style.width = '0%';
+                    setTimeout(() => {
+                        bar.style.transition = 'width 1s ease-out';
+                        bar.style.width = width;
+                    }, 100);
+                }, index * 200);
+            });
+        }
+
+        // Intersection Observer for animations
+        const analyticsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateDistributionBars();
+                    analyticsObserver.unobserve(entry.target);
+                }
+            });
+        });
+
+        const analyticsSection = document.getElementById('analytics');
+        if (analyticsSection) {
+            analyticsObserver.observe(analyticsSection);
+        }
+
+        // Simulate real-time price updates in positions table
+        function updatePositionPrices() {
+            const priceElements = document.querySelectorAll('.current-price');
+            priceElements.forEach(element => {
+                const currentPrice = parseFloat(element.textContent);
+                const change = (Math.random() - 0.5) * 0.01;
+                const newPrice = (currentPrice + change).toFixed(4);
+                element.textContent = newPrice;
+                
+                // Add flash animation
+                element.style.animation = 'flash 0.5s ease-out';
+                setTimeout(() => {
+                    element.style.animation = '';
+                }, 500);
+            });
+        }
+
+        // Update prices every 3 seconds
+        setInterval(updatePositionPrices, 3000);
+    </script>
+</body>
+</html>

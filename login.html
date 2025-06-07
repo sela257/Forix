@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - BaHi Security Forix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link rel="stylesheet" href="login-styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="login-body">
+    <!-- Animated Background -->
+    <div class="login-background">
+        <div class="cyber-grid"></div>
+        <div class="floating-elements"></div>
+        <div class="energy-field"></div>
+        <div class="matrix-rain"></div>
+        <div class="holographic-overlay"></div>
+    </div>
+
+    <!-- Particle System -->
+    <canvas id="particleCanvas" class="particle-canvas"></canvas>
+
+    <!-- Main Login Container -->
+    <div class="login-container">
+        <!-- Logo Section -->
+        <div class="login-header">
+            <div class="logo-container">
+                <i class="fas fa-chart-line logo-icon"></i>
+                <h1 class="logo-title">BaHi Security Forix</h1>
+                <p class="logo-subtitle">Advanced Virtual Trading Platform</p>
+            </div>
+        </div>
+
+        <!-- Login Form -->
+        <div class="login-form-container glass-effect-advanced">
+            <div class="form-header">
+                <h2 class="form-title">Welcome to the Future</h2>
+                <p class="form-subtitle">Access your virtual trading universe</p>
+            </div>
+
+            <form class="login-form" id="loginForm">
+                <div class="input-group">
+                    <div class="input-container">
+                        <input type="email" id="email" required class="form-input">
+                        <label for="email" class="form-label">Email Address</label>
+                        <div class="input-highlight"></div>
+                        <i class="fas fa-envelope input-icon"></i>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-container">
+                        <input type="password" id="password" required class="form-input">
+                        <label for="password" class="form-label">Password</label>
+                        <div class="input-highlight"></div>
+                        <i class="fas fa-lock input-icon"></i>
+                        <button type="button" class="password-toggle" onclick="togglePassword()">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="form-options">
+                    <label class="checkbox-container">
+                        <input type="checkbox" id="remember">
+                        <span class="checkmark"></span>
+                        <span class="checkbox-text">Remember me</span>
+                    </label>
+                    <a href="#" class="forgot-password">Forgot Password?</a>
+                </div>
+
+                <button type="submit" class="login-btn mega-login-btn">
+                    <span class="btn-text">Login to Platform</span>
+                    <div class="btn-energy-field"></div>
+                    <div class="btn-particles"></div>
+                    <i class="fas fa-arrow-right btn-arrow"></i>
+                </button>
+            </form>
+
+            <div class="divider">
+                <span class="divider-text">Or continue with</span>
+            </div>
+
+            <div class="social-login">
+                <button class="social-btn google-btn">
+                    <i class="fab fa-google"></i>
+                    <span>Google</span>
+                </button>
+                <button class="social-btn microsoft-btn">
+                    <i class="fab fa-microsoft"></i>
+                    <span>Microsoft</span>
+                </button>
+                <button class="social-btn apple-btn">
+                    <i class="fab fa-apple"></i>
+                    <span>Apple</span>
+                </button>
+            </div>
+
+            <div class="signup-link">
+                <p>Don't have an account? <a href="#" class="signup-btn">Create Account</a></p>
+            </div>
+        </div>
+
+        <!-- Security Badge -->
+        <div class="security-badge">
+            <i class="fas fa-shield-alt"></i>
+            <span>256-bit SSL Encrypted</span>
+        </div>
+    </div>
+
+    <!-- Loading Overlay -->
+    <div class="loading-overlay" id="loadingOverlay">
+        <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="loading-text">Authenticating...</div>
+        </div>
+    </div>
+
+    <!-- Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="modal-content">
+            <div class="success-icon">
+                <i class="fas fa-check-circle"></i>
+            </div>
+            <h3>Welcome Back!</h3>
+            <p>Login successful. Redirecting to dashboard...</p>
+        </div>
+    </div>
+
+    <script>
+        // Particle System
+        class ParticleSystem {
+            constructor() {
+                this.canvas = document.getElementById('particleCanvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.particles = [];
+                this.resize();
+                this.init();
+                this.animate();
+                window.addEventListener('resize', () => this.resize());
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            init() {
+                for (let i = 0; i < 100; i++) {
+                    this.particles.push({
+                        x: Math.random() * this.canvas.width,
+                        y: Math.random() * this.canvas.height,
+                        vx: (Math.random() - 0.5) * 0.5,
+                        vy: (Math.random() - 0.5) * 0.5,
+                        size: Math.random() * 2 + 1,
+                        opacity: Math.random() * 0.5 + 0.2,
+                        color: `hsl(${Math.random() * 60 + 200}, 70%, 60%)`
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+                
+                this.particles.forEach(particle => {
+                    particle.x += particle.vx;
+                    particle.y += particle.vy;
+                    
+                    if (particle.x < 0 || particle.x > this.canvas.width) particle.vx *= -1;
+                    if (particle.y < 0 || particle.y > this.canvas.height) particle.vy *= -1;
+                    
+                    this.ctx.beginPath();
+                    this.ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
+                    this.ctx.fillStyle = particle.color;
+                    this.ctx.globalAlpha = particle.opacity;
+                    this.ctx.fill();
+                });
+                
+                this.ctx.globalAlpha = 1;
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Initialize particle system
+        new ParticleSystem();
+
+        // Form handling
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            
+            if (email && password) {
+                showLoading();
+                
+                setTimeout(() => {
+                    hideLoading();
+                    showSuccess();
+                    
+                    // Set authentication flag
+                    localStorage.setItem('userAuthenticated', 'true');
+                    
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                }, 2000);
+            }
+        });
+
+        function togglePassword() {
+            const passwordInput = document.getElementById('password');
+            const toggleBtn = document.querySelector('.password-toggle i');
+            
+            if (passwordInput.type === 'password') {
+                passwordInput.type = 'text';
+                toggleBtn.classList.remove('fa-eye');
+                toggleBtn.classList.add('fa-eye-slash');
+            } else {
+                passwordInput.type = 'password';
+                toggleBtn.classList.remove('fa-eye-slash');
+                toggleBtn.classList.add('fa-eye');
+            }
+        }
+
+        function showLoading() {
+            document.getElementById('loadingOverlay').classList.add('active');
+        }
+
+        function hideLoading() {
+            document.getElementById('loadingOverlay').classList.remove('active');
+        }
+
+        function showSuccess() {
+            document.getElementById('successModal').classList.add('active');
+        }
+
+        // Input animations
+        document.querySelectorAll('.form-input').forEach(input => {
+            input.addEventListener('focus', function() {
+                this.parentElement.classList.add('focused');
+            });
+            
+            input.addEventListener('blur', function() {
+                if (!this.value) {
+                    this.parentElement.classList.remove('focused');
+                }
+            });
+        });
+
+        // Matrix rain effect
+        function createMatrixRain() {
+            const matrixContainer = document.querySelector('.matrix-rain');
+            const chars = '01ﾊﾐﾋｰｳｼﾅﾓﾆｻﾜﾂｵﾘｱﾎﾃﾏｹﾒｴｶｷﾑﾕﾗｾﾈｽﾀﾇﾍ';
+            
+            for (let i = 0; i < 20; i++) {
+                const column = document.createElement('div');
+                column.className = 'matrix-column';
+                column.style.left = Math.random() * 100 + '%';
+                column.style.animationDelay = Math.random() * 5 + 's';
+                column.style.animationDuration = (Math.random() * 3 + 2) + 's';
+                
+                for (let j = 0; j < 20; j++) {
+                    const char = document.createElement('span');
+                    char.textContent = chars[Math.floor(Math.random() * chars.length)];
+                    char.style.opacity = Math.random();
+                    column.appendChild(char);
+                }
+                
+                matrixContainer.appendChild(column);
+            }
+        }
+
+        createMatrixRain();
+    </script>
+</body>
+</html>

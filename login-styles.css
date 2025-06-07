@@ -1,0 +1,747 @@
+/* =============================================================================
+   BaHi Security Forix - Advanced Login Page Styles
+   Ultra-Modern Authentication Interface
+============================================================================= */
+
+/* Login Body Styles */
+.login-body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    overflow: hidden;
+    background: radial-gradient(ellipse at center, #0a0a0f 0%, #000000 100%);
+    perspective: 1000px;
+}
+
+/* =============================================================================
+   Animated Background System
+============================================================================= */
+
+.login-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -10;
+}
+
+.cyber-grid {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image: 
+        linear-gradient(rgba(79, 172, 254, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(79, 172, 254, 0.1) 1px, transparent 1px);
+    background-size: 50px 50px;
+    animation: gridMove 20s linear infinite;
+}
+
+.floating-elements {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-image:
+        radial-gradient(circle at 20% 30%, rgba(79, 172, 254, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 119, 198, 0.15) 0%, transparent 40%),
+        radial-gradient(circle at 40% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 30%),
+        radial-gradient(circle at 60% 20%, rgba(255, 71, 87, 0.1) 0%, transparent 30%);
+    background-size: 300px 300px, 400px 400px, 250px 250px, 350px 350px;
+    animation: floatingMove 25s ease-in-out infinite;
+}
+
+.energy-field {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: conic-gradient(from 0deg at 50% 50%, 
+        rgba(79, 172, 254, 0.05) 0deg, 
+        transparent 60deg, 
+        rgba(255, 119, 198, 0.05) 120deg, 
+        transparent 180deg,
+        rgba(0, 255, 136, 0.03) 240deg,
+        transparent 300deg);
+    animation: energyRotate 30s linear infinite;
+}
+
+.matrix-rain {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.matrix-column {
+    position: absolute;
+    top: -100%;
+    width: 20px;
+    color: rgba(0, 255, 136, 0.3);
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    line-height: 20px;
+    animation: matrixFall 4s linear infinite;
+}
+
+.holographic-overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: 
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 2px,
+            rgba(79, 172, 254, 0.02) 2px,
+            rgba(79, 172, 254, 0.02) 4px
+        );
+    animation: hologramFlicker 3s ease-in-out infinite;
+}
+
+.particle-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -5;
+    pointer-events: none;
+}
+
+/* =============================================================================
+   Main Login Container
+============================================================================= */
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem;
+    position: relative;
+    z-index: 10;
+}
+
+.login-header {
+    text-align: center;
+    margin-bottom: 3rem;
+    animation: slideInDown 1s ease-out;
+}
+
+.logo-container {
+    position: relative;
+}
+
+.logo-icon {
+    font-size: 4rem;
+    background: linear-gradient(45deg, #4facfe, #00f2fe, #4facfe);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    animation: logoGlow 3s ease-in-out infinite, gradientShift 4s ease infinite;
+    display: block;
+    margin-bottom: 1rem;
+}
+
+.logo-title {
+    font-size: 3rem;
+    font-weight: 800;
+    background: linear-gradient(45deg, #667eea, #764ba2, #f093fb, #f5576c);
+    background-size: 300% 300%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    animation: titleShine 4s ease-in-out infinite;
+}
+
+.logo-subtitle {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+    font-weight: 300;
+    animation: subtitleGlow 2s ease-in-out infinite alternate;
+}
+
+/* =============================================================================
+   Advanced Glass Effect Form
+============================================================================= */
+
+.glass-effect-advanced {
+    background: linear-gradient(135deg, 
+        rgba(255, 255, 255, 0.1) 0%, 
+        rgba(255, 255, 255, 0.05) 50%, 
+        rgba(255, 255, 255, 0.02) 100%);
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 25px;
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.5),
+        0 0 50px rgba(79, 172, 254, 0.1),
+        inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    position: relative;
+    overflow: hidden;
+}
+
+.glass-effect-advanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        rgba(79, 172, 254, 0.8), 
+        rgba(255, 119, 198, 0.8), 
+        transparent);
+    animation: borderGlow 3s ease-in-out infinite;
+}
+
+.login-form-container {
+    width: 450px;
+    max-width: 90vw;
+    padding: 3rem;
+    animation: scaleIn 0.8s ease-out 0.3s both;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.form-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    background: linear-gradient(45deg, #4facfe, #00f2fe);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 0.5rem;
+    animation: titlePulse 3s ease-in-out infinite;
+}
+
+.form-subtitle {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    font-weight: 300;
+}
+
+/* =============================================================================
+   Advanced Input Fields
+============================================================================= */
+
+.input-group {
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.input-container {
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1.2rem 3.5rem 1.2rem 1.5rem;
+    background: rgba(255, 255, 255, 0.05);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    border-radius: 15px;
+    color: #ffffff;
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.4s ease;
+    backdrop-filter: blur(10px);
+}
+
+.form-input:focus {
+    border-color: rgba(79, 172, 254, 0.8);
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 
+        0 0 25px rgba(79, 172, 254, 0.3),
+        inset 0 0 20px rgba(79, 172, 254, 0.1);
+    transform: scale(1.02);
+}
+
+.form-label {
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    pointer-events: none;
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.input-container.focused .form-label,
+.form-input:focus + .form-label {
+    top: -0.5rem;
+    left: 1rem;
+    font-size: 0.8rem;
+    color: #4facfe;
+    background: rgba(10, 10, 15, 0.9);
+    padding: 0 0.5rem;
+    border-radius: 4px;
+}
+
+.input-icon {
+    position: absolute;
+    right: 1.2rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.4);
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+
+.input-container.focused .input-icon,
+.form-input:focus ~ .input-icon {
+    color: #4facfe;
+    animation: iconGlow 2s ease-in-out infinite;
+}
+
+.input-highlight {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #4facfe, #00f2fe);
+    transition: all 0.4s ease;
+    transform: translateX(-50%);
+}
+
+.input-container.focused .input-highlight,
+.form-input:focus ~ .input-highlight {
+    width: 100%;
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.5);
+}
+
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    z-index: 3;
+}
+
+.password-toggle:hover {
+    color: #4facfe;
+    transform: translateY(-50%) scale(1.1);
+}
+
+/* =============================================================================
+   Form Options & Buttons
+============================================================================= */
+
+.form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.checkbox-container input {
+    display: none;
+}
+
+.checkmark {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    margin-right: 0.8rem;
+    position: relative;
+    transition: all 0.3s ease;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+.checkmark::after {
+    content: '';
+    position: absolute;
+    left: 6px;
+    top: 2px;
+    width: 6px;
+    height: 10px;
+    border: solid #4facfe;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg) scale(0);
+    transition: all 0.3s ease;
+}
+
+.checkbox-container input:checked ~ .checkmark {
+    background: rgba(79, 172, 254, 0.2);
+    border-color: #4facfe;
+    box-shadow: 0 0 15px rgba(79, 172, 254, 0.3);
+}
+
+.checkbox-container input:checked ~ .checkmark::after {
+    transform: rotate(45deg) scale(1);
+}
+
+.checkbox-text {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.9rem;
+}
+
+.forgot-password {
+    color: #4facfe;
+    text-decoration: none;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+}
+
+.forgot-password:hover {
+    color: #00f2fe;
+    text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+/* =============================================================================
+   Mega Login Button
+============================================================================= */
+
+.mega-login-btn {
+    width: 100%;
+    padding: 1.2rem 2rem;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border: none;
+    border-radius: 15px;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.mega-login-btn:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 
+        0 15px 35px rgba(102, 126, 234, 0.4),
+        0 0 50px rgba(102, 126, 234, 0.2);
+}
+
+.mega-login-btn:active {
+    transform: translateY(-1px) scale(1.01);
+}
+
+.btn-energy-field {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(45deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+    transform: translateX(-100%) skew(-20deg);
+    transition: all 0.6s ease;
+}
+
+.mega-login-btn:hover .btn-energy-field {
+    transform: translateX(200%) skew(-20deg);
+}
+
+.btn-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    opacity: 0;
+    animation: particleMove 2s ease-in-out infinite;
+}
+
+.mega-login-btn:hover .btn-particles {
+    opacity: 1;
+}
+
+.btn-arrow {
+    transition: all 0.3s ease;
+}
+
+.mega-login-btn:hover .btn-arrow {
+    transform: translateX(5px);
+}
+
+/* =============================================================================
+   Social Login & Additional Elements
+============================================================================= */
+
+.divider {
+    text-align: center;
+    margin: 2rem 0;
+    position: relative;
+}
+
+.divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+}
+
+.divider-text {
+    background: rgba(10, 10, 15, 0.9);
+    color: rgba(255, 255, 255, 0.6);
+    padding: 0 1rem;
+    font-size: 0.9rem;
+    position: relative;
+    z-index: 1;
+}
+
+.social-login {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.social-btn {
+    flex: 1;
+    padding: 0.8rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    backdrop-filter: blur(10px);
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+    border-color: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+.google-btn:hover { box-shadow: 0 5px 15px rgba(234, 67, 53, 0.3); }
+.microsoft-btn:hover { box-shadow: 0 5px 15px rgba(0, 120, 212, 0.3); }
+.apple-btn:hover { box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2); }
+
+.signup-link {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.signup-btn {
+    color: #4facfe;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    color: #00f2fe;
+    text-shadow: 0 0 10px rgba(79, 172, 254, 0.5);
+}
+
+.security-badge {
+    margin-top: 2rem;
+    padding: 0.8rem 1.5rem;
+    background: rgba(0, 255, 136, 0.1);
+    border: 1px solid rgba(0, 255, 136, 0.3);
+    border-radius: 25px;
+    color: rgba(0, 255, 136, 0.9);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    animation: securityPulse 3s ease-in-out infinite;
+}
+
+/* =============================================================================
+   Loading & Success States
+============================================================================= */
+
+.loading-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(10px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.loading-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-spinner {
+    text-align: center;
+}
+
+.spinner-ring {
+    width: 80px;
+    height: 80px;
+    border: 3px solid rgba(79, 172, 254, 0.2);
+    border-top: 3px solid #4facfe;
+    border-radius: 50%;
+    margin: 0 auto;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    animation: spin 1s linear infinite;
+}
+
+.spinner-ring:nth-child(2) {
+    width: 100px;
+    height: 100px;
+    animation-duration: 1.5s;
+    animation-direction: reverse;
+}
+
+.spinner-ring:nth-child(3) {
+    width: 120px;
+    height: 120px;
+    animation-duration: 2s;
+}
+
+.loading-text {
+    margin-top: 8rem;
+    color: #4facfe;
+    font-size: 1.2rem;
+    font-weight: 600;
+    animation: loadingPulse 1.5s ease-in-out infinite;
+}
+
+.success-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    backdrop-filter: blur(15px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+}
+
+.success-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-content {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 3rem;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(20px);
+    animation: scaleIn 0.5s ease-out;
+}
+
+.success-icon {
+    font-size: 4rem;
+    color: #00ff88;
+    margin-bottom: 1rem;
+    animation: successBounce 0.6s ease-out;
+}
+
+.modal-content h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.modal-content p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.1rem;
+}
+
+/* =============================================================================
+   Responsive Design
+============================================================================= */
+
+@media (max-width: 768px) {
+    .login-container {
+        padding: 1rem;
+    }
+    
+    .login-form-container {
+        width: 100%;
+        padding: 2rem;
+    }
+    
+    .logo-title {
+        font-size: 2rem;
+    }
+    
+    .form-title {
+        font-size: 1.8rem;
+    }
+    
+    .social-login {
+        flex-direction: column;
+    }
+    
+    .form-options {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+@media (max-width: 480px) {
+    .login-form-container {
+        padding: 1.5rem;
+    }
+    
+    .logo-icon {
+        font-size: 3rem;
+    }
+    
+    .logo-title {
+        font-size: 1.5rem;
+    }
+    
+    .form-title {
+        font-size: 1.5rem;
+    }
+}

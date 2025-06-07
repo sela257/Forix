@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News & Analysis - BaHi Security Forix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span class="logo-text">BaHi Security Forix</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="trading.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Trading</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="market.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Market</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="help.html" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content news-content">
+        <div class="news-header">
+            <h1 class="page-title">Market News & Analysis</h1>
+            <div class="news-controls">
+                <div class="news-filters">
+                    <button class="filter-btn active" data-filter="all">All News</button>
+                    <button class="filter-btn" data-filter="forex">Forex</button>
+                    <button class="filter-btn" data-filter="analysis">Analysis</button>
+                    <button class="filter-btn" data-filter="economic">Economic</button>
+                </div>
+                <div class="news-search">
+                    <input type="text" placeholder="Search news..." class="search-input">
+                    <i class="fas fa-search"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="news-layout">
+            <!-- Breaking News -->
+            <div class="breaking-news glass-effect">
+                <div class="breaking-header">
+                    <i class="fas fa-bolt"></i>
+                    <span>Breaking News</span>
+                    <div class="live-indicator">
+                        <span class="live-dot"></span>
+                        LIVE
+                    </div>
+                </div>
+                <div class="breaking-content">
+                    <div class="breaking-item">
+                        <span class="breaking-time">2 min ago</span>
+                        <span class="breaking-text">EUR/USD surges to daily highs following ECB dovish comments</span>
+                        <span class="breaking-impact high">HIGH IMPACT</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main News Section -->
+            <div class="news-main">
+                <!-- Featured Article -->
+                <article class="featured-article glass-effect hover-lift">
+                    <div class="article-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <div class="article-category">Market Analysis</div>
+                    </div>
+                    <div class="article-content">
+                        <h2 class="article-title">Federal Reserve Signals Potential Rate Cut in Q2 2024</h2>
+                        <p class="article-excerpt">
+                            Recent statements from Fed officials indicate a possible shift in monetary policy stance, 
+                            potentially impacting USD strength across major currency pairs...
+                        </p>
+                        <div class="article-meta">
+                            <div class="article-author">
+                                <i class="fas fa-user-circle"></i>
+                                <span>Market Analyst Team</span>
+                            </div>
+                            <div class="article-time">
+                                <i class="fas fa-clock"></i>
+                                <span>15 minutes ago</span>
+                            </div>
+                            <div class="article-impact high">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <span>High Impact</span>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+
+                <!-- News Grid -->
+                <div class="news-grid">
+                    <article class="news-card glass-effect hover-lift" data-category="forex">
+                        <div class="news-header">
+                            <div class="news-category forex">Forex</div>
+                            <div class="news-time">30 min ago</div>
+                        </div>
+                        <h3 class="news-title">GBP/USD Technical Outlook: Bullish Momentum Continues</h3>
+                        <p class="news-excerpt">
+                            Sterling maintains upward trajectory against the dollar, with key resistance levels in focus...
+                        </p>
+                        <div class="news-footer">
+                            <div class="news-pairs">
+                                <span class="pair-tag profit">GBP/USD</span>
+                                <span class="pair-tag">EUR/GBP</span>
+                            </div>
+                            <div class="news-impact medium">Medium Impact</div>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass-effect hover-lift" data-category="economic">
+                        <div class="news-header">
+                            <div class="news-category economic">Economic</div>
+                            <div class="news-time">1 hour ago</div>
+                        </div>
+                        <h3 class="news-title">US Non-Farm Payrolls Beat Expectations at 187K</h3>
+                        <p class="news-excerpt">
+                            Employment data shows resilience in US labor market, supporting dollar strength expectations...
+                        </p>
+                        <div class="news-footer">
+                            <div class="news-pairs">
+                                <span class="pair-tag profit">USD/JPY</span>
+                                <span class="pair-tag profit">EUR/USD</span>
+                            </div>
+                            <div class="news-impact high">High Impact</div>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass-effect hover-lift" data-category="analysis">
+                        <div class="news-header">
+                            <div class="news-category analysis">Analysis</div>
+                            <div class="news-time">2 hours ago</div>
+                        </div>
+                        <h3 class="news-title">Weekly Forex Outlook: Central Bank Decisions Drive Volatility</h3>
+                        <p class="news-excerpt">
+                            Key monetary policy meetings this week set to influence major currency movements...
+                        </p>
+                        <div class="news-footer">
+                            <div class="news-pairs">
+                                <span class="pair-tag">Multiple Pairs</span>
+                            </div>
+                            <div class="news-impact medium">Medium Impact</div>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass-effect hover-lift" data-category="forex">
+                        <div class="news-header">
+                            <div class="news-category forex">Forex</div>
+                            <div class="news-time">3 hours ago</div>
+                        </div>
+                        <h3 class="news-title">Japanese Yen Weakens on BoJ Policy Speculation</h3>
+                        <p class="news-excerpt">
+                            Speculation around Bank of Japan's next policy move continues to weigh on yen performance...
+                        </p>
+                        <div class="news-footer">
+                            <div class="news-pairs">
+                                <span class="pair-tag loss">USD/JPY</span>
+                                <span class="pair-tag loss">EUR/JPY</span>
+                            </div>
+                            <div class="news-impact medium">Medium Impact</div>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass-effect hover-lift" data-category="economic">
+                        <div class="news-header">
+                            <div class="news-category economic">Economic</div>
+                            <div class="news-time">4 hours ago</div>
+                        </div>
+                        <h3 class="news-title">European Inflation Data Shows Cooling Trend</h3>
+                        <p class="news-excerpt">
+                            Latest CPI figures from major European economies suggest inflationary pressures easing...
+                        </p>
+                        <div class="news-footer">
+                            <div class="news-pairs">
+                                <span class="pair-tag">EUR/USD</span>
+                                <span class="pair-tag">EUR/GBP</span>
+                            </div>
+                            <div class="news-impact high">High Impact</div>
+                        </div>
+                    </article>
+
+                    <article class="news-card glass-effect hover-lift" data-category="analysis">
+                        <div class="news-header">
+                            <div class="news-category analysis">Analysis</div>
+                            <div class="news-time">5 hours ago</div>
+                        </div>
+                        <h3 class="news-title">Risk Sentiment Improves: Safe Havens Under Pressure</h3>
+                        <p class="news-excerpt">
+                            Improving global risk appetite puts pressure on traditional safe-haven currencies...
+                        </p>
+                        <div class="news-footer">
+                            <div class="news-pairs">
+                                <span class="pair-tag">USD/CHF</span>
+                                <span class="pair-tag">USD/JPY</span>
+                            </div>
+                            <div class="news-impact low">Low Impact</div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+
+            <!-- Sidebar -->
+            <div class="news-sidebar">
+                <!-- Economic Calendar Widget -->
+                <div class="sidebar-widget glass-effect">
+                    <div class="widget-header">
+                        <h3><i class="fas fa-calendar-alt"></i> Today's Events</h3>
+                        <a href="#" class="widget-link">View All</a>
+                    </div>
+                    <div class="widget-content">
+                        <div class="calendar-event high-impact">
+                            <div class="event-time">14:30</div>
+                            <div class="event-info">
+                                <span class="event-currency">USD</span>
+                                <span class="event-name">Non-Farm Payrolls</span>
+                            </div>
+                            <div class="event-impact high">HIGH</div>
+                        </div>
+                        <div class="calendar-event medium-impact">
+                            <div class="event-time">16:00</div>
+                            <div class="event-info">
+                                <span class="event-currency">EUR</span>
+                                <span class="event-name">ECB Rate Decision</span>
+                            </div>
+                            <div class="event-impact medium">MED</div>
+                        </div>
+                        <div class="calendar-event low-impact">
+                            <div class="event-time">18:30</div>
+                            <div class="event-info">
+                                <span class="event-currency">GBP</span>
+                                <span class="event-name">Manufacturing PMI</span>
+                            </div>
+                            <div class="event-impact low">LOW</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Market Sentiment -->
+                <div class="sidebar-widget glass-effect">
+                    <div class="widget-header">
+                        <h3><i class="fas fa-chart-pie"></i> Market Sentiment</h3>
+                    </div>
+                    <div class="widget-content">
+                        <div class="sentiment-item">
+                            <div class="sentiment-pair">EUR/USD</div>
+                            <div class="sentiment-bar">
+                                <div class="sentiment-fill bullish" style="width: 65%;"></div>
+                            </div>
+                            <div class="sentiment-percentage bullish">65% Bullish</div>
+                        </div>
+                        <div class="sentiment-item">
+                            <div class="sentiment-pair">GBP/USD</div>
+                            <div class="sentiment-bar">
+                                <div class="sentiment-fill bearish" style="width: 45%;"></div>
+                            </div>
+                            <div class="sentiment-percentage bearish">45% Bearish</div>
+                        </div>
+                        <div class="sentiment-item">
+                            <div class="sentiment-pair">USD/JPY</div>
+                            <div class="sentiment-bar">
+                                <div class="sentiment-fill bullish" style="width: 72%;"></div>
+                            </div>
+                            <div class="sentiment-percentage bullish">72% Bullish</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trading Opportunities -->
+                <div class="sidebar-widget glass-effect">
+                    <div class="widget-header">
+                        <h3><i class="fas fa-lightbulb"></i> Trading Ideas</h3>
+                    </div>
+                    <div class="widget-content">
+                        <div class="trading-idea">
+                            <div class="idea-header">
+                                <span class="idea-pair">EUR/USD</span>
+                                <span class="idea-type buy">BUY</span>
+                            </div>
+                            <div class="idea-levels">
+                                <div class="idea-level">
+                                    <span class="level-label">Entry:</span>
+                                    <span class="level-value">1.0845</span>
+                                </div>
+                                <div class="idea-level">
+                                    <span class="level-label">Target:</span>
+                                    <span class="level-value">1.0890</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trading-idea">
+                            <div class="idea-header">
+                                <span class="idea-pair">GBP/USD</span>
+                                <span class="idea-type sell">SELL</span>
+                            </div>
+                            <div class="idea-levels">
+                                <div class="idea-level">
+                                    <span class="level-label">Entry:</span>
+                                    <span class="level-value">1.2570</span>
+                                </div>
+                                <div class="idea-level">
+                                    <span class="level-label">Target:</span>
+                                    <span class="level-value">1.2520</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // News filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const newsCards = document.querySelectorAll('.news-card');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+
+                const filterValue = this.dataset.filter;
+                
+                newsCards.forEach(card => {
+                    if (filterValue === 'all' || card.dataset.category === filterValue) {
+                        card.style.display = 'block';
+                        card.style.animation = 'fadeInUp 0.5s ease-out';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        searchInput.addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            
+            newsCards.forEach(card => {
+                const title = card.querySelector('.news-title').textContent.toLowerCase();
+                const excerpt = card.querySelector('.news-excerpt').textContent.toLowerCase();
+                
+                if (title.includes(searchTerm) || excerpt.includes(searchTerm)) {
+                    card.style.display = 'block';
+                } else {
+                    card.style.display = 'none';
+                }
+            });
+        });
+
+        // Animate news cards on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const newsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animation = 'slideInUp 0.6s ease-out forwards';
+                    newsObserver.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        // Observe all news cards
+        newsCards.forEach(card => {
+            newsObserver.observe(card);
+        });
+
+        // Breaking news ticker animation
+        function updateBreakingNews() {
+            const breakingItem = document.querySelector('.breaking-item');
+            if (breakingItem) {
+                breakingItem.style.animation = 'pulse 2s ease-in-out infinite';
+            }
+        }
+
+        // Update breaking news animation
+        setInterval(updateBreakingNews, 5000);
+
+        // Animate sentiment bars on load
+        function animateSentimentBars() {
+            const sentimentFills = document.querySelectorAll('.sentiment-fill');
+            sentimentFills.forEach((fill, index) => {
+                setTimeout(() => {
+                    const width = fill.style.width;
+                    fill.style.width = '0%';
+                    setTimeout(() => {
+                        fill.style.transition = 'width 1s ease-out';
+                        fill.style.width = width;
+                    }, 100);
+                }, index * 200);
+            });
+        }
+
+        // Initialize sentiment bar animation
+        setTimeout(animateSentimentBars, 1000);
+
+        // Auto-update timestamps
+        function updateTimestamps() {
+            const timeElements = document.querySelectorAll('.news-time, .article-time span, .breaking-time');
+            timeElements.forEach(element => {
+                // This would normally connect to a real-time service
+                // For demo, we'll just add a subtle animation
+                element.style.animation = 'fadeIn 0.3s ease-out';
+                setTimeout(() => {
+                    element.style.animation = '';
+                }, 300);
+            });
+        }
+
+        // Update timestamps every 30 seconds
+        setInterval(updateTimestamps, 30000);
+    </script>
+</body>
+</html>

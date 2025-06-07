@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - BaHi Security Forix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span class="logo-text">BaHi Security Forix</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="trading.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Trading</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="market.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Market</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="help.html" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content settings-content">
+        <div class="settings-header">
+            <h1 class="page-title">Platform Settings</h1>
+            <div class="settings-actions">
+                <button class="settings-btn export">
+                    <i class="fas fa-download"></i>
+                    Export Settings
+                </button>
+                <button class="settings-btn import">
+                    <i class="fas fa-upload"></i>
+                    Import Settings
+                </button>
+            </div>
+        </div>
+
+        <div class="settings-layout">
+            <!-- Settings Navigation -->
+            <div class="settings-nav glass-effect">
+                <h3><i class="fas fa-list"></i> Categories</h3>
+                <div class="nav-items">
+                    <button class="settings-nav-btn active" data-section="account">
+                        <i class="fas fa-user"></i>
+                        Account
+                    </button>
+                    <button class="settings-nav-btn" data-section="trading">
+                        <i class="fas fa-exchange-alt"></i>
+                        Trading
+                    </button>
+                    <button class="settings-nav-btn" data-section="display">
+                        <i class="fas fa-desktop"></i>
+                        Display
+                    </button>
+                    <button class="settings-nav-btn" data-section="notifications">
+                        <i class="fas fa-bell"></i>
+                        Notifications
+                    </button>
+                    <button class="settings-nav-btn" data-section="security">
+                        <i class="fas fa-shield-alt"></i>
+                        Security
+                    </button>
+                    <button class="settings-nav-btn" data-section="api">
+                        <i class="fas fa-code"></i>
+                        API
+                    </button>
+                </div>
+            </div>
+
+            <!-- Settings Content -->
+            <div class="settings-main">
+                <!-- Account Settings -->
+                <div class="settings-section active" id="account">
+                    <div class="section-card glass-effect">
+                        <div class="section-header">
+                            <h2><i class="fas fa-user"></i> Account Information</h2>
+                            <p>Manage your account details and preferences</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="form-group">
+                                <label for="fullName">Full Name</label>
+                                <input type="text" id="fullName" class="form-input" value="John Doe" placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" class="form-input" value="john.doe@example.com" placeholder="Enter your email">
+                                <div class="input-status verified">
+                                    <i class="fas fa-check-circle"></i>
+                                    Verified
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" class="form-input" value="+1 (555) 123-4567" placeholder="Enter your phone number">
+                            </div>
+                            <div class="form-group">
+                                <label for="timezone">Timezone</label>
+                                <select id="timezone" class="form-select">
+                                    <option value="UTC-5">Eastern Time (UTC-5)</option>
+                                    <option value="UTC-6">Central Time (UTC-6)</option>
+                                    <option value="UTC-7">Mountain Time (UTC-7)</option>
+                                    <option value="UTC-8">Pacific Time (UTC-8)</option>
+                                    <option value="UTC+0">Greenwich Mean Time (UTC+0)</option>
+                                </select>
+                            </div>
+                            <div class="form-actions">
+                                <button class="btn btn-primary">Save Changes</button>
+                                <button class="btn btn-secondary">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trading Settings -->
+                <div class="settings-section" id="trading">
+                    <div class="section-card glass-effect">
+                        <div class="section-header">
+                            <h2><i class="fas fa-exchange-alt"></i> Trading Preferences</h2>
+                            <p>Configure your trading environment and default settings</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="form-group">
+                                <label for="defaultLotSize">Default Lot Size</label>
+                                <select id="defaultLotSize" class="form-select">
+                                    <option value="0.01">0.01 (Micro Lot)</option>
+                                    <option value="0.1" selected>0.1 (Mini Lot)</option>
+                                    <option value="1.0">1.0 (Standard Lot)</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="maxSpread">Maximum Spread (pips)</label>
+                                <input type="number" id="maxSpread" class="form-input" value="3" min="1" max="10">
+                            </div>
+                            <div class="settings-toggle-group">
+                                <div class="toggle-item">
+                                    <label class="toggle-label">One-Click Trading</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="oneClickTrading" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                                <div class="toggle-item">
+                                    <label class="toggle-label">Auto Stop Loss</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="autoStopLoss">
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                                <div class="toggle-item">
+                                    <label class="toggle-label">Auto Take Profit</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="autoTakeProfit">
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                                <div class="toggle-item">
+                                    <label class="toggle-label">Trade Confirmations</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="tradeConfirmations" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Display Settings -->
+                <div class="settings-section" id="display">
+                    <div class="section-card glass-effect">
+                        <div class="section-header">
+                            <h2><i class="fas fa-desktop"></i> Display & Interface</h2>
+                            <p>Customize the appearance and layout of your trading platform</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="form-group">
+                                <label for="theme">Theme</label>
+                                <div class="theme-selector">
+                                    <div class="theme-option active" data-theme="dark">
+                                        <div class="theme-preview dark"></div>
+                                        <span>Dark</span>
+                                    </div>
+                                    <div class="theme-option" data-theme="light">
+                                        <div class="theme-preview light"></div>
+                                        <span>Light</span>
+                                    </div>
+                                    <div class="theme-option" data-theme="auto">
+                                        <div class="theme-preview auto"></div>
+                                        <span>Auto</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="language">Language</label>
+                                <select id="language" class="form-select">
+                                    <option value="en" selected>English</option>
+                                    <option value="ar">العربية (Arabic)</option>
+                                    <option value="es">Español</option>
+                                    <option value="fr">Français</option>
+                                    <option value="de">Deutsch</option>
+                                    <option value="ja">日本語</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="chartType">Default Chart Type</label>
+                                <select id="chartType" class="form-select">
+                                    <option value="candlestick" selected>Candlestick</option>
+                                    <option value="line">Line Chart</option>
+                                    <option value="bar">Bar Chart</option>
+                                    <option value="area">Area Chart</option>
+                                </select>
+                            </div>
+                            <div class="settings-toggle-group">
+                                <div class="toggle-item">
+                                    <label class="toggle-label">Show Grid Lines</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="showGrid" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                                <div class="toggle-item">
+                                    <label class="toggle-label">Smooth Animations</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="smoothAnimations" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                                <div class="toggle-item">
+                                    <label class="toggle-label">Sound Effects</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="soundEffects" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Notifications Settings -->
+                <div class="settings-section" id="notifications">
+                    <div class="section-card glass-effect">
+                        <div class="section-header">
+                            <h2><i class="fas fa-bell"></i> Notifications</h2>
+                            <p>Configure how and when you receive trading alerts</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="notification-category">
+                                <h4>Trading Alerts</h4>
+                                <div class="settings-toggle-group">
+                                    <div class="toggle-item">
+                                        <label class="toggle-label">Trade Execution</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="tradeExecution" checked>
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <label class="toggle-label">Stop Loss Hit</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="stopLossHit" checked>
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <label class="toggle-label">Take Profit Hit</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="takeProfitHit" checked>
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="notification-category">
+                                <h4>Market Updates</h4>
+                                <div class="settings-toggle-group">
+                                    <div class="toggle-item">
+                                        <label class="toggle-label">Price Alerts</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="priceAlerts" checked>
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <label class="toggle-label">Economic News</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="economicNews">
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <label class="toggle-label">Market Opening/Closing</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="marketHours">
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Settings -->
+                <div class="settings-section" id="security">
+                    <div class="section-card glass-effect">
+                        <div class="section-header">
+                            <h2><i class="fas fa-shield-alt"></i> Security & Privacy</h2>
+                            <p>Protect your account with advanced security features</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="security-status">
+                                <div class="status-item">
+                                    <i class="fas fa-check-circle status-icon success"></i>
+                                    <div class="status-content">
+                                        <span class="status-label">Two-Factor Authentication</span>
+                                        <span class="status-value">Enabled</span>
+                                    </div>
+                                    <button class="status-action">Configure</button>
+                                </div>
+                                <div class="status-item">
+                                    <i class="fas fa-check-circle status-icon success"></i>
+                                    <div class="status-content">
+                                        <span class="status-label">Email Verification</span>
+                                        <span class="status-value">Verified</span>
+                                    </div>
+                                    <button class="status-action">Update</button>
+                                </div>
+                                <div class="status-item">
+                                    <i class="fas fa-exclamation-triangle status-icon warning"></i>
+                                    <div class="status-content">
+                                        <span class="status-label">Password Strength</span>
+                                        <span class="status-value">Medium</span>
+                                    </div>
+                                    <button class="status-action">Improve</button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="sessionTimeout">Session Timeout (minutes)</label>
+                                <select id="sessionTimeout" class="form-select">
+                                    <option value="15">15 minutes</option>
+                                    <option value="30" selected>30 minutes</option>
+                                    <option value="60">1 hour</option>
+                                    <option value="120">2 hours</option>
+                                    <option value="0">Never</option>
+                                </select>
+                            </div>
+                            <div class="settings-toggle-group">
+                                <div class="toggle-item">
+                                    <label class="toggle-label">Login Notifications</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="loginNotifications" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                                <div class="toggle-item">
+                                    <label class="toggle-label">Suspicious Activity Alerts</label>
+                                    <div class="toggle-switch">
+                                        <input type="checkbox" id="suspiciousAlerts" checked>
+                                        <span class="toggle-slider"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- API Settings -->
+                <div class="settings-section" id="api">
+                    <div class="section-card glass-effect">
+                        <div class="section-header">
+                            <h2><i class="fas fa-code"></i> API Configuration</h2>
+                            <p>Manage API keys and third-party integrations</p>
+                        </div>
+                        <div class="section-content">
+                            <div class="api-keys">
+                                <div class="api-key-item">
+                                    <div class="api-info">
+                                        <span class="api-name">Trading API Key</span>
+                                        <span class="api-status active">Active</span>
+                                    </div>
+                                    <div class="api-key">
+                                        <code>bahi_*****************************xyz</code>
+                                        <button class="copy-btn"><i class="fas fa-copy"></i></button>
+                                    </div>
+                                    <div class="api-actions">
+                                        <button class="api-btn regenerate">Regenerate</button>
+                                        <button class="api-btn revoke">Revoke</button>
+                                    </div>
+                                </div>
+                                <div class="api-key-item">
+                                    <div class="api-info">
+                                        <span class="api-name">Webhook URL</span>
+                                        <span class="api-status inactive">Inactive</span>
+                                    </div>
+                                    <div class="api-key">
+                                        <input type="url" class="form-input" placeholder="https://your-webhook-url.com">
+                                    </div>
+                                    <div class="api-actions">
+                                        <button class="api-btn activate">Activate</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="api-permissions">
+                                <h4>API Permissions</h4>
+                                <div class="settings-toggle-group">
+                                    <div class="toggle-item">
+                                        <label class="toggle-label">Read Account Information</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="apiReadAccount" checked>
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <label class="toggle-label">Execute Trades</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="apiExecuteTrades">
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                    <div class="toggle-item">
+                                        <label class="toggle-label">Access Market Data</label>
+                                        <div class="toggle-switch">
+                                            <input type="checkbox" id="apiMarketData" checked>
+                                            <span class="toggle-slider"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Settings navigation
+        const settingsNavBtns = document.querySelectorAll('.settings-nav-btn');
+        const settingsSections = document.querySelectorAll('.settings-section');
+
+        settingsNavBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const targetSection = this.dataset.section;
+                
+                // Remove active class from all nav buttons and sections
+                settingsNavBtns.forEach(b => b.classList.remove('active'));
+                settingsSections.forEach(s => s.classList.remove('active'));
+                
+                // Add active class to clicked button and corresponding section
+                this.classList.add('active');
+                document.getElementById(targetSection).classList.add('active');
+            });
+        });
+
+        // Theme selector
+        const themeOptions = document.querySelectorAll('.theme-option');
+        themeOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                themeOptions.forEach(o => o.classList.remove('active'));
+                this.classList.add('active');
+                
+                const theme = this.dataset.theme;
+                document.body.dataset.theme = theme;
+            });
+        });
+
+        // Toggle switches
+        const toggleSwitches = document.querySelectorAll('.toggle-switch input');
+        toggleSwitches.forEach(toggle => {
+            toggle.addEventListener('change', function() {
+                // Add animation to the slider
+                const slider = this.nextElementSibling;
+                slider.style.transform = this.checked ? 'translateX(24px)' : 'translateX(0)';
+            });
+        });
+
+        // Copy API key functionality
+        const copyBtns = document.querySelectorAll('.copy-btn');
+        copyBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const apiKey = this.previousElementSibling.textContent;
+                navigator.clipboard.writeText(apiKey).then(() => {
+                    this.innerHTML = '<i class="fas fa-check"></i>';
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-copy"></i>';
+                    }, 2000);
+                });
+            });
+        });
+
+        // Form validation and saving
+        const saveButtons = document.querySelectorAll('.btn-primary');
+        saveButtons.forEach(btn => {
+            if (btn.textContent.includes('Save')) {
+                btn.addEventListener('click', function() {
+                    // Add loading animation
+                    this.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Saving...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.innerHTML = '<i class="fas fa-check"></i> Saved!';
+                        setTimeout(() => {
+                            this.innerHTML = 'Save Changes';
+                            this.disabled = false;
+                        }, 2000);
+                    }, 1500);
+                });
+            }
+        });
+
+        // Initialize toggle switch positions
+        toggleSwitches.forEach(toggle => {
+            const slider = toggle.nextElementSibling;
+            slider.style.transform = toggle.checked ? 'translateX(24px)' : 'translateX(0)';
+        });
+    </script>
+</body>
+</html>

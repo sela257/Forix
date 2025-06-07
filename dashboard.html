@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - BaHi Security Forix</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="animations.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <nav class="navbar glass-effect">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-chart-line"></i>
+                <span class="logo-text">BaHi Security Forix</span>
+            </div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">
+                        <i class="fas fa-home"></i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item active">
+                    <a href="dashboard.html" class="nav-link">
+                        <i class="fas fa-tachometer-alt"></i>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="trading.html" class="nav-link">
+                        <i class="fas fa-exchange-alt"></i>
+                        <span>Trading</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="portfolio.html" class="nav-link">
+                        <i class="fas fa-briefcase"></i>
+                        <span>Portfolio</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="market.html" class="nav-link">
+                        <i class="fas fa-chart-bar"></i>
+                        <span>Market</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="news.html" class="nav-link">
+                        <i class="fas fa-newspaper"></i>
+                        <span>News</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="settings.html" class="nav-link">
+                        <i class="fas fa-cog"></i>
+                        <span>Settings</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="help.html" class="nav-link">
+                        <i class="fas fa-question-circle"></i>
+                        <span>Help</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <main class="main-content dashboard-content">
+        <div class="dashboard-header">
+            <h1 class="page-title">Trading Dashboard</h1>
+            <div class="dashboard-controls">
+                <div class="time-selector">
+                    <button class="time-btn active">1H</button>
+                    <button class="time-btn">4H</button>
+                    <button class="time-btn">1D</button>
+                    <button class="time-btn">1W</button>
+                </div>
+                <button class="refresh-btn">
+                    <i class="fas fa-sync-alt"></i>
+                    Refresh
+                </button>
+            </div>
+        </div>
+
+        <div class="dashboard-grid">
+            <!-- Account Overview -->
+            <div class="dashboard-card glass-effect">
+                <div class="card-header">
+                    <h3><i class="fas fa-wallet"></i> Account Overview</h3>
+                    <div class="card-actions">
+                        <button class="action-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="balance-display">
+                        <div class="balance-item">
+                            <span class="balance-label">Virtual Balance</span>
+                            <span class="balance-amount">$100,000.00</span>
+                        </div>
+                        <div class="balance-item">
+                            <span class="balance-label">Equity</span>
+                            <span class="balance-amount profit">$102,450.75</span>
+                        </div>
+                        <div class="balance-item">
+                            <span class="balance-label">Margin</span>
+                            <span class="balance-amount">$15,230.25</span>
+                        </div>
+                        <div class="balance-item">
+                            <span class="balance-label">Free Margin</span>
+                            <span class="balance-amount">$87,220.50</span>
+                        </div>
+                    </div>
+                    <div class="performance-chart">
+                        <div class="chart-container">
+                            <div class="chart-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Market Watch -->
+            <div class="dashboard-card glass-effect">
+                <div class="card-header">
+                    <h3><i class="fas fa-eye"></i> Market Watch</h3>
+                    <div class="card-actions">
+                        <button class="action-btn"><i class="fas fa-plus"></i></button>
+                        <button class="action-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="market-list">
+                        <div class="market-item">
+                            <div class="pair-info">
+                                <span class="pair-name">EUR/USD</span>
+                                <span class="pair-desc">Euro vs US Dollar</span>
+                            </div>
+                            <div class="pair-prices">
+                                <span class="bid-price">1.0845</span>
+                                <span class="ask-price profit">1.0847</span>
+                                <span class="price-change profit">+0.12%</span>
+                            </div>
+                        </div>
+                        <div class="market-item">
+                            <div class="pair-info">
+                                <span class="pair-name">GBP/USD</span>
+                                <span class="pair-desc">British Pound vs US Dollar</span>
+                            </div>
+                            <div class="pair-prices">
+                                <span class="bid-price">1.2567</span>
+                                <span class="ask-price loss">1.2569</span>
+                                <span class="price-change loss">-0.08%</span>
+                            </div>
+                        </div>
+                        <div class="market-item">
+                            <div class="pair-info">
+                                <span class="pair-name">USD/JPY</span>
+                                <span class="pair-desc">US Dollar vs Japanese Yen</span>
+                            </div>
+                            <div class="pair-prices">
+                                <span class="bid-price">149.23</span>
+                                <span class="ask-price profit">149.25</span>
+                                <span class="price-change profit">+0.34%</span>
+                            </div>
+                        </div>
+                        <div class="market-item">
+                            <div class="pair-info">
+                                <span class="pair-name">AUD/USD</span>
+                                <span class="pair-desc">Australian Dollar vs US Dollar</span>
+                            </div>
+                            <div class="pair-prices">
+                                <span class="bid-price">0.6523</span>
+                                <span class="ask-price loss">0.6525</span>
+                                <span class="price-change loss">-0.15%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Active Positions -->
+            <div class="dashboard-card glass-effect">
+                <div class="card-header">
+                    <h3><i class="fas fa-chart-pie"></i> Active Positions</h3>
+                    <div class="card-actions">
+                        <button class="action-btn"><i class="fas fa-expand"></i></button>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="positions-list">
+                        <div class="position-item">
+                            <div class="position-header">
+                                <span class="position-pair">EUR/USD</span>
+                                <span class="position-type buy">BUY</span>
+                                <span class="position-lot">0.10</span>
+                            </div>
+                            <div class="position-details">
+                                <div class="position-stat">
+                                    <span class="stat-label">Open Price</span>
+                                    <span class="stat-value">1.0832</span>
+                                </div>
+                                <div class="position-stat">
+                                    <span class="stat-label">Current</span>
+                                    <span class="stat-value">1.0847</span>
+                                </div>
+                                <div class="position-stat">
+                                    <span class="stat-label">P&L</span>
+                                    <span class="stat-value profit">+$15.00</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="position-item">
+                            <div class="position-header">
+                                <span class="position-pair">GBP/USD</span>
+                                <span class="position-type sell">SELL</span>
+                                <span class="position-lot">0.05</span>
+                            </div>
+                            <div class="position-details">
+                                <div class="position-stat">
+                                    <span class="stat-label">Open Price</span>
+                                    <span class="stat-value">1.2578</span>
+                                </div>
+                                <div class="position-stat">
+                                    <span class="stat-label">Current</span>
+                                    <span class="stat-value">1.2569</span>
+                                </div>
+                                <div class="position-stat">
+                                    <span class="stat-label">P&L</span>
+                                    <span class="stat-value profit">+$4.50</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="no-positions" style="display: none;">
+                        <i class="fas fa-chart-line"></i>
+                        <p>No active positions</p>
+                        <a href="trading.html" class="btn btn-primary">Start Trading</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Trading Tools -->
+            <div class="dashboard-card glass-effect">
+                <div class="card-header">
+                    <h3><i class="fas fa-tools"></i> Quick Tools</h3>
+                </div>
+                <div class="card-content">
+                    <div class="tools-grid">
+                        <a href="trading.html" class="tool-item">
+                            <i class="fas fa-exchange-alt"></i>
+                            <span>New Trade</span>
+                        </a>
+                        <a href="market.html" class="tool-item">
+                            <i class="fas fa-chart-bar"></i>
+                            <span>Market Analysis</span>
+                        </a>
+                        <a href="portfolio.html" class="tool-item">
+                            <i class="fas fa-history"></i>
+                            <span>Trade History</span>
+                        </a>
+                        <a href="news.html" class="tool-item">
+                            <i class="fas fa-newspaper"></i>
+                            <span>Economic Calendar</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Performance Summary -->
+            <div class="dashboard-card glass-effect span-2">
+                <div class="card-header">
+                    <h3><i class="fas fa-trophy"></i> Performance Summary</h3>
+                    <div class="card-actions">
+                        <select class="period-select">
+                            <option>This Week</option>
+                            <option>This Month</option>
+                            <option>This Year</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="card-content">
+                    <div class="performance-stats">
+                        <div class="perf-stat">
+                            <div class="perf-icon profit">
+                                <i class="fas fa-arrow-up"></i>
+                            </div>
+                            <div class="perf-info">
+                                <span class="perf-label">Total Profit</span>
+                                <span class="perf-value profit">$2,450.75</span>
+                            </div>
+                        </div>
+                        <div class="perf-stat">
+                            <div class="perf-icon">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <div class="perf-info">
+                                <span class="perf-label">Win Rate</span>
+                                <span class="perf-value">73.2%</span>
+                            </div>
+                        </div>
+                        <div class="perf-stat">
+                            <div class="perf-icon">
+                                <i class="fas fa-exchange-alt"></i>
+                            </div>
+                            <div class="perf-info">
+                                <span class="perf-label">Total Trades</span>
+                                <span class="perf-value">127</span>
+                            </div>
+                        </div>
+                        <div class="perf-stat">
+                            <div class="perf-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="perf-info">
+                                <span class="perf-label">Avg. Duration</span>
+                                <span class="perf-value">2h 15m</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script>
+        // Mobile navigation toggle
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
+        
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            navToggle.classList.toggle('active');
+        });
+
+        // Time selector functionality
+        const timeBtns = document.querySelectorAll('.time-btn');
+        timeBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                timeBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+            });
+        });
+
+        // Refresh button animation
+        const refreshBtn = document.querySelector('.refresh-btn');
+        refreshBtn.addEventListener('click', function() {
+            const icon = this.querySelector('i');
+            icon.style.animation = 'spin 1s linear';
+            setTimeout(() => {
+                icon.style.animation = '';
+            }, 1000);
+        });
+
+        // Simulate real-time price updates
+        function updatePrices() {
+            const priceElements = document.querySelectorAll('.ask-price');
+            priceElements.forEach(element => {
+                const currentPrice = parseFloat(element.textContent);
+                const change = (Math.random() - 0.5) * 0.01;
+                const newPrice = (currentPrice + change).toFixed(4);
+                element.textContent = newPrice;
+                
+                // Add flash animation
+                element.style.animation = 'flash 0.5s ease-out';
+                setTimeout(() => {
+                    element.style.animation = '';
+                }, 500);
+            });
+        }
+
+        // Update prices every 3 seconds
+        setInterval(updatePrices, 3000);
+    </script>
+</body>
+</html>
